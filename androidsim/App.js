@@ -53,9 +53,6 @@ const Section = ({children, title}): Node => {
 };
 
 const App: () => Node = () => {
-  // Cloud Storage fireBase instance
-  //FirebaseStorage storage = FirebaseStorage.getInstance();
-
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -73,12 +70,8 @@ const App: () => Node = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
+          <Section title="Cloud Storage">
+            This will direct you to upload or delete a file from the database
           </Section>
           <Section title="Debug">
             <DebugInstructions />
@@ -93,6 +86,9 @@ const App: () => Node = () => {
   );
 
   // FireBase management
+  //Firebase instance initialization
+  //FirebaseStorage storage = FirebaseStorage.getInstance();
+
   // choosing an image
   function uploadImage(e) {
     const file = e.target.files[0]
