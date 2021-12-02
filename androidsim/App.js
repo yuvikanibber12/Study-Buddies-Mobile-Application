@@ -54,7 +54,7 @@ const Section = ({children, title}): Node => {
 
 const App: () => Node = () => {
   // Cloud Storage fireBase instance
-//  FirebaseStorage storage = FirebaseStorage.getInstance();
+  //FirebaseStorage storage = FirebaseStorage.getInstance();
 
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -91,6 +91,19 @@ const App: () => Node = () => {
       </ScrollView>
     </SafeAreaView>
   );
+
+  // FireBase management
+  // choosing an image
+  function uploadImage(e) {
+    const file = e.target.files[0]
+    console.log(file);
+  }
+
+  //uploading an image
+  firebase
+    .storage()
+    .ref('images/' + file.name)
+    .put(file);
 };
 
 const styles = StyleSheet.create({
