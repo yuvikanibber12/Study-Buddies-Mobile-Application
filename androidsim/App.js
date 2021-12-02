@@ -53,6 +53,9 @@ const Section = ({children, title}): Node => {
 };
 
 const App: () => Node = () => {
+  // Cloud Storage fireBase instance
+//  FirebaseStorage storage = FirebaseStorage.getInstance();
+
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
