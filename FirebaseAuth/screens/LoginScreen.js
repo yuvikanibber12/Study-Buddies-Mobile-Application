@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useState } from 'react'
-import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Icon, Dimensions, ScrollView } from 'react-native'
 import { auth } from '../firebase'
 
 const LoginScreen = () => {
@@ -40,26 +40,26 @@ const LoginScreen = () => {
   }
 
   return (
+    
     <KeyboardAvoidingView
       style={styles.container}
       behavior="padding"
     >
-      <View style={styles.inputContainer}>
-        <TextInput
+    <View style={styles.inputContainer}>
+      <TextInput
           placeholder="Email"
           value={email}
           onChangeText={text => setEmail(text)}
           style={styles.input}
-        />
-        <TextInput
+      />
+      <TextInput
           placeholder="Password"
           value={password}
           onChangeText={text => setPassword(text)}
           style={styles.input}
           secureTextEntry
-        />
-      </View>
-
+      />
+    </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           onPress={handleLogin}
