@@ -9,10 +9,11 @@ import SplashScreen from './screens/SplashScreen';
 
 const Stack = createNativeStackNavigator();
 
+//default app navigation stack using React Native component. Includes screens listed
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName='Splash'>
         <Stack.Screen options={{headerShown: false}} name="Splash" component={SplashScreen} />
         <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
